@@ -2,7 +2,7 @@ provider:
   name: faas
   gateway: http://127.0.0.1:8080
 functions:
-  myfunction:
+  pi-flake8-function:
     lang: python3-flask
-    handler: ./myfunction
-    image: myfunction:latest
+    handler: ./pi-flake8-function
+    image: pi-flake8-function:latest

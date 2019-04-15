@@ -11,6 +11,7 @@ def build_temp_zipfiles(request):
         zip_files.append(tmp_file.name)
     return zip_files
 
+
 def build_directories(request):
 
     temp_directories = []
@@ -19,6 +20,7 @@ def build_directories(request):
         temp_directories.append(temp_directory)
 
     return temp_directories
+
 
 def unzip_files(zip_file, temp_directory):
     zip_ref = zipfile.ZipFile(zip_file, 'r')

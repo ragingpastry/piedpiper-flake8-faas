@@ -24,9 +24,9 @@ def handle(request):
 
     return '\n'.join(flake_reports)
 
+
 def run_flake8(directory):
     with io.StringIO() as buf, redirect_stdout(buf):
         style_guide = flake8.get_style_guide()
-        report = style_guide.check_files([directory])
+        style_guide.check_files([directory])
         return buf.getvalue()
-

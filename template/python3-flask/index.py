@@ -1,10 +1,11 @@
 # Copyright (c) Alex Ellis 2017. All rights reserved.
 # Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from function import handler
 #from gevent.wsgi import WSGIServer
 from gevent.pywsgi import WSGIServer
+
 
 app = Flask(__name__)
 
@@ -24,7 +25,7 @@ def fix_transfer_encoding():
 @app.route("/<path:path>", methods=["POST", "GET"])
 def main_route(path):
     ret = handler.handle(request)
-    return ret
+    return jsonify(ret)
 
 if __name__ == '__main__':
     #app.run(host='0.0.0.0', port=5000, debug=False)
